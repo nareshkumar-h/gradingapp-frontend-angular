@@ -1,0 +1,49 @@
+<div class="row justify-content-center align-items-center"
+		style="height: 15vh; margin: 0;">
+		<div class="col-md-6">
+				<div style="display:none;" id="errorMsg" class="alert alert-primary alert-dismissible fade show" role="alert">
+				  		<i id="messageBody"></i>
+				</div>
+		</div>
+	</div>
+	
+	<div class="row justify-content-center align-items-center" style="height: 15vh; margin: 0;">
+		<div class="form-group">
+				<div id="gradeMsg"></div>
+			<form>
+			<h3>Define Score Range</h3><br>
+
+			<!-- {{grades | json}} -->
+			<table border="0">
+				<thead><tr><th>Grade</th><th>Min</th> <th>Max</th></tr></thead>
+				<tbody>
+					<tr *ngFor="let g of grades;let i= index">
+						<td>{{g.grade}}</td>
+						<td> <input type="number" name="" id="min{{i+1}}" value={{g.min}} min="0" max="100">   </td>
+						<td> <input type="number" name="" id="max{{i+1}}" value={{g.max}} min="0" max="100">   </td>
+					</tr>
+				</tbody>
+			</table>
+
+                    <input type="text" name="" id="grd1" value="A" minlength="1">
+                    <input type="number" name="" id="grade1" value="75" min="0" max="100">
+                     <input type="number" name="" id="grade2" value="100" min="0" max="100"><br>
+                     <input type="text" name="" id="grd2" value="B" minlength="1">
+                     <input type="number" name="" id="grade3" value="50" min="0" max="100">
+                      <input type="number" name="" id="grade4" value="74" min="0" max="100"><br>
+                      <input type="text" name="" id="grd3" value="C" minlength="1">
+                      <input type="number" name="" id="grade5" value="25" min="0" max="100">
+                      <input type="number" name="" id="grade6" value="49" min="0" max="100"><br>
+                      <input type="text" name="" id="grd4" value="D" minlength="1">
+                      <input type="number" name="" id="grade7" value="0" min="0" max="100">
+                   <input type="number" name="" id="grade8" value="24" min="0" max="100">
+				<br>
+						<button class="btn btn-primary form-control" value="Submit" style="margin: 10px;width: 35vh;"  (click)="updateRange()">Submit</button><br>
+						<input type="reset" class="btn btn-secondary form-control" style="margin: 10px;width: 35vh;">
+						</form>
+		</div>
+	</div>
+	<script>
+       
+            
+    </script>
