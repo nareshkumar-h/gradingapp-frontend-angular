@@ -7,9 +7,8 @@ import { FormsModule } from '@angular/forms';
 export class AdminloginService {
 
   constructor(private http:HttpClient) { }
- apiUrl="http://localhost:9050/login?";
+ apiUrl="https://gms-faculty-ms.herokuapp.com/login?";
 
  login(formData:any):any{
    return this.http.get(this.apiUrl+"email="+formData.email+"&password="+formData.password);
  }}
-

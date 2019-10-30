@@ -14,6 +14,7 @@ import { HomeComponent } from './layout/home/home/home.component';
 import { AdminfeatureComponent } from './core/adminhome/adminfeature/adminfeature.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DefineScoreRangeComponent } from './core/adminhome/define_score_range/define-score-range/define-score-range.component';
+import { UserfeatureComponent } from './core/userhome/userfeature/userfeature/userfeature.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DefineScoreRangeComponent } from './core/adminhome/define_score_range/d
     FooterComponent,
     HomeComponent,
     AdminfeatureComponent,
-    DefineScoreRangeComponent
+    DefineScoreRangeComponent,
+    UserfeatureComponent
   ],
   imports: [
     BrowserModule,

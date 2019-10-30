@@ -9,6 +9,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './layout/home/home/home.component';
 import { AdminfeatureComponent } from './core/adminhome/adminfeature/adminfeature.component';
 import { DefineScoreRangeComponent } from './core/adminhome/define_score_range/define-score-range/define-score-range.component';
+import { UserfeatureComponent } from './core/userhome/userfeature/userfeature/userfeature.component';
 
 
 const routes: Routes = [
@@ -21,8 +22,8 @@ const routes: Routes = [
  { path: 'home', component: HomeComponent },
  { path: '', redirectTo: '/home', pathMatch: 'full'},
  { path: 'adminfeature', component: AdminfeatureComponent },
- { path: 'define-score-range', component: DefineScoreRangeComponent }
-
+ { path: 'define-score-range', component: DefineScoreRangeComponent },
+ { path: 'userfeature', component: UserfeatureComponent }
  
 ];
 

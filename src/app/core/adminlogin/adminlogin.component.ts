@@ -24,7 +24,7 @@ login()
     console.log(JSON.stringify(res));
    
     var data=res;
-    if(data!=null){
+    if(data.role=='A'){
       localStorage.setItem("user",JSON.stringify(res));
     this.router.navigate(['adminfeature']);
   }
