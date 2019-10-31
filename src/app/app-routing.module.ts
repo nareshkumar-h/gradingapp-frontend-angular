@@ -10,6 +10,14 @@ import { HomeComponent } from './layout/home/home/home.component';
 import { AdminfeatureComponent } from './core/adminhome/adminfeature/adminfeature.component';
 import { DefineScoreRangeComponent } from './core/adminhome/define_score_range/define-score-range/define-score-range.component';
 import { UserfeatureComponent } from './core/userhome/userfeature/userfeature/userfeature.component';
+import { GradewiselistComponent } from './core/userhome/gradewiselist/gradewiselist.component';
+import { SpecificgradeComponent } from './core/userhome/specificgrade/specificgrade.component';
+import { SubwiselistComponent } from './core/userhome/subwiselist/subwiselist.component';
+import { ViewgradeComponent } from './core/adminhome/adminfeature/viewgrade/viewgrade.component';
+import { AddMarksComponent } from './core/adminhome/add-marks/add-marks.component';
+import { AddFacultyComponent } from './core/adminhome/add-faculty/add-faculty.component';
+import { StudentLoginComponent } from './core/student-login/student-login.component';
+import { StudentfeatureComponent } from './core/studentfeature/studentfeature.component';
 
 
 const routes: Routes = [
@@ -23,8 +31,16 @@ const routes: Routes = [
  { path: '', redirectTo: '/home', pathMatch: 'full'},
  { path: 'adminfeature', component: AdminfeatureComponent },
  { path: 'define-score-range', component: DefineScoreRangeComponent },
- { path: 'userfeature', component: UserfeatureComponent }
- 
+ { path: 'userfeature', component: UserfeatureComponent },
+ { path: 'gradewiselist', component: GradewiselistComponent },
+{ path: 'specificgrade', component: SpecificgradeComponent },
+{ path: 'subwiselist', component: SubwiselistComponent },
+{ path: 'viewGrade', component: ViewgradeComponent },
+{ path: 'addMarks', component: AddMarksComponent },
+{ path: 'addEmployee', component: AddFacultyComponent },
+{ path: 'studentLogin', component: StudentLoginComponent },
+{ path: 'studentfeature', component: StudentfeatureComponent }
+
 ];
 
 @NgModule({

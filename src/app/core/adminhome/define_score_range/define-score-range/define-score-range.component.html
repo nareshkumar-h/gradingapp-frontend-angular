@@ -14,32 +14,33 @@
 			<h3>Define Score Range</h3><br>
 
 			<!-- {{grades | json}} -->
+		
 			<table border="0">
 				<thead><tr><th>Grade</th><th>Min</th> <th>Max</th></tr></thead>
 				<tbody>
 					<tr *ngFor="let g of grades;let i= index">
-						<td>{{g.grade}}</td>
-						<td> <input type="number" name="" id="min{{i+1}}" value={{g.min}} min="0" max="100">   </td>
-						<td> <input type="number" name="" id="max{{i+1}}" value={{g.max}} min="0" max="100">   </td>
+						<td><input type="text" disabled id="" value={{g.grade}} ></td>
+						<td> <input type="number" name="" id="min{{i+1}}"  value="{{g.min}}" min="0" max="100" (keyup)="validateMarkChange($event,this)">   </td>
+						<td> <input type="number" name="" id="max{{i+1}}"  value="{{g.max}}" min="0" max="100" (keyup)="validateMarkChange($event,this)">   </td>
 					</tr>
+					<tr><td colspan=3><button class="btn btn-primary form-control" value="Submit" style="margin: 10px;width: 35vh;"  (click)="updateRanges()">Submit</button></td></tr>
 				</tbody>
 			</table>
-
+			
+			<!--
                     <input type="text" name="" id="grd1" value="A" minlength="1">
-                    <input type="number" name="" id="grade1" value="75" min="0" max="100">
-                     <input type="number" name="" id="grade2" value="100" min="0" max="100"><br>
+                    <input type="number" name="" id="min1" value="75" min="0" max="100">
+                     <input type="number" name="" id="max1" value="100" min="0" max="100"><br>
                      <input type="text" name="" id="grd2" value="B" minlength="1">
-                     <input type="number" name="" id="grade3" value="50" min="0" max="100">
-                      <input type="number" name="" id="grade4" value="74" min="0" max="100"><br>
+                     <input type="number" name="" id="min2" value="50" min="0" max="100">
+                      <input type="number" name="" id="max2" value="74" min="0" max="100"><br>
                       <input type="text" name="" id="grd3" value="C" minlength="1">
-                      <input type="number" name="" id="grade5" value="25" min="0" max="100">
-                      <input type="number" name="" id="grade6" value="49" min="0" max="100"><br>
+                      <input type="number" name="" id="min3" value="25" min="0" max="100">
+                      <input type="number" name="" id="max3" value="49" min="0" max="100"><br>
                       <input type="text" name="" id="grd4" value="D" minlength="1">
-                      <input type="number" name="" id="grade7" value="0" min="0" max="100">
-                   <input type="number" name="" id="grade8" value="24" min="0" max="100">
-				<br>
-						<button class="btn btn-primary form-control" value="Submit" style="margin: 10px;width: 35vh;"  (click)="updateRange()">Submit</button><br>
-						<input type="reset" class="btn btn-secondary form-control" style="margin: 10px;width: 35vh;">
+                      <input type="number" name="" id="min4" value="0" min="0" max="100">
+                   <input type="number" name="" id="max4" value="24" min="0" max="100">-->
+				
 						</form>
 		</div>
 	</div>

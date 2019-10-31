@@ -12,6 +12,16 @@ export class UserloginComponent implements OnInit {
   constructor(private userLoginservice:UserloginService,private router:Router) { }
 
   ngOnInit() {
+    let user=JSON.parse(localStorage.getItem("user"));
+    if(user!=null){
+    if(user.role=="A")
+    {
+      this.router.navigate(["adminfeature"]);
+    }
+    else if(user.role=='T'){
+    this.router.navigate(['userfeature']);}
+  }
+ 
   }
 login()
 {
@@ -24,7 +34,12 @@ login()
     console.log(JSON.stringify(res));
    
     var data=res;
-    if(data.role=='T'){
+    if(data==null){
+      alert("Access Denied!Invalid credentials");
+      document.getElementById("messageBody").innerHTML="Access Denied! Invalid credentials";
+  }
+
+   else if(data.role=='T'){
       localStorage.setItem("user",JSON.stringify(res));
     this.router.navigate(['userfeature']);
   }
@@ -33,8 +48,10 @@ login()
      alert("Access Denied!Invalid credentials");
       document.getElementById("messageBody").innerHTML="Access Denied! Invalid credentials";
     }
+   
    },(err)=>
    {
+    alert("Access Denied!Invalid credentials");
    console.log('error=>'+JSON.stringify(err.error.message));
    });
 }

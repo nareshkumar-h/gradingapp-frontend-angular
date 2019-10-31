@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card border-secondary">
+                <div class="card-body">
+                    <div class="row justify-content-center align-items-center" style="height: 20vh; margin: 0;">
+                            <div>
+                                <h3>List of student on a specific Subject</h3>
+                                <br>
+                                
+                                    Select Subject : 
+                                    <select [(ngModel)]="subId" id="subId" class="form-control" >
+                                        <option *ngFor="let data of list" value={{data.id}}>{{data.name}}</option>
+                                    </select><br><br> 
+                                    <div class="text-center">
+                                        <input type="submit" class="btn btn-primary" (click)="subwise()" value="Enter" />&nbsp;
+                                        <input type="reset" class="btn btn-primary"> <br><br>
+                                    </div>
+                               <br><br/><br>
+                            </div>
+                        </div><br><br/><br>
+                        
+                    <div class="card-text">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sno</th>
+                                    <th>Student Name</th>
+                                    <th>Register No</th>
+                                    <th>Mark</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of marks;let i=index;">
+                                    <td>{{i+1}}</td>
+                                    <td>{{data.student.name}}</td>
+                                    <td>{{data.student.regno}}</td>
+                                    <td>{{data.mark}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

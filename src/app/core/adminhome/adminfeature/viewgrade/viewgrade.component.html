@@ -1,0 +1,32 @@
+<div class="row justify-content-center align-items-center"
+		style="height: 15vh; margin: 0;">
+		<div class="col-md-6">
+				<div style="display:none;" id="errorMsg" class="alert alert-primary alert-dismissible fade show" role="alert">
+				  		<i id="messageBody"></i>
+				</div>
+		</div>
+	</div>
+	
+	<div class="row justify-content-center align-items-center" style="height: 15vh; margin: 0;">
+		<div class="form-group">
+				<div id="gradeMsg"></div>
+			<h3>View Score Range</h3><br>
+
+			<!-- {{grades | json}} -->
+		
+			<table class=table table-hover border="1">
+				<thead><tr><th>Grade</th><th>Min</th> <th>Max</th></tr></thead>
+				<tbody>
+					<tr *ngFor="let g of grades;let i= index">
+						<td>{{g.grade}} </td>
+						<td> {{g.min}}</td>
+						<td>{{g.max}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script>
+       
+            
+    </script>

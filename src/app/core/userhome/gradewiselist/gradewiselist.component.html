@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card border-secondary">
+            <div class="card-body">
+                <h4 class="card-title">List of student based on grade</h4>
+                <div class="card-text">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Sno</th>
+                                <th>Student Name</th>
+                                <th>Register No</th>
+                                <th>Average</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let d of data;let i=index;">
+                                <td>{{i+1}}</td>
+                                <td>{{d.studentName}}</td>
+                                <td>{{d.regNo}}</td>
+                                <td>{{d.avg}}</td>
+                                <td>{{d.grade}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,6 +15,14 @@ import { AdminfeatureComponent } from './core/adminhome/adminfeature/adminfeatur
 import { HttpClientModule } from '@angular/common/http';
 import { DefineScoreRangeComponent } from './core/adminhome/define_score_range/define-score-range/define-score-range.component';
 import { UserfeatureComponent } from './core/userhome/userfeature/userfeature/userfeature.component';
+import { GradewiselistComponent } from './core/userhome/gradewiselist/gradewiselist.component';
+import { SpecificgradeComponent } from './core/userhome/specificgrade/specificgrade.component';
+import { SubwiselistComponent } from './core/userhome/subwiselist/subwiselist.component';
+import { ViewgradeComponent } from './core/adminhome/adminfeature/viewgrade/viewgrade.component';
+import { AddMarksComponent } from './core/adminhome/add-marks/add-marks.component';
+import { AddFacultyComponent } from './core/adminhome/add-faculty/add-faculty.component';
+import { StudentLoginComponent } from './core/student-login/student-login.component';
+import { StudentfeatureComponent } from './core/studentfeature/studentfeature.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,15 @@ import { UserfeatureComponent } from './core/userhome/userfeature/userfeature/us
     HomeComponent,
     AdminfeatureComponent,
     DefineScoreRangeComponent,
-    UserfeatureComponent
+    UserfeatureComponent,
+    GradewiselistComponent,
+    SpecificgradeComponent,
+    SubwiselistComponent,
+    ViewgradeComponent,
+    AddMarksComponent,
+    AddFacultyComponent,
+    StudentLoginComponent,
+    StudentfeatureComponent
   ],
   imports: [
     BrowserModule,

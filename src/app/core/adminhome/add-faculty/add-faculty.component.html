@@ -1,0 +1,31 @@
+<div class="container">
+                <div id="messageBody" align=center></div>
+                        <div class="form-group">
+                           <br> <input type="text" class="form-control" autocomplete="off" [(ngModel)]="name" name="name"
+                                id="name" pattern="[A-Za-z]{1,20}$" title="Enter only alphabets and less than 20 letter" placeholder="employee name" required="required" >
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" autocomplete="off" [(ngModel)]="email" name="email" id="email" placeholder="email" required="required" >
+
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" autocomplete="off"  [(ngModel)]="mobile" name="mobile" id="mobile"
+                               onkeyup="validateMobileno()" pattern="^[6-9]{1}[0-9]{9}$" title="Enter 10 digits mobile number, Phone number with 7-9 and remaing 9 digit with 0-9" 
+                               placeholder="Mobile Number" required="required" >
+                               <span id="mobileId" style="color: red"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="password" class="form-control" autocomplete="off" [(ngModel)]="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" 
+                            placeholder="set your password" required>
+                        </div>
+                        
+                        
+                        <div class="form-group" align=center>
+
+                            <button type="submit" (click)="addEmployee()" class="btn btn-primary btn-xs">Add</button>&nbsp;
+                            <button type="reset" class="btn btn-secondary btn-xs">clear</button>
+
+                        </div>                    
+            </div>
