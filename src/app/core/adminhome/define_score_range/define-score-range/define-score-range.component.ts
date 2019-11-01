@@ -307,6 +307,7 @@ updateRanges()
     this.http.get("https://gradingsystemgrade.herokuapp.com/ScoreRange/update?grade1=A&grade2=B&grade3=C&grade4=D&id1=1&id2=2&id3=3&id4=4&max1="+max1+"+&max2=+"+max2+"+&max3=+"+max3+"+&max4=+"+max4+"+&min1=+"+min1+"+&min2=+"+min2+"+&min3=+"+min3+"+&min4=+"+min4+"+").subscribe ( (res)=>{
         var data = res;
        alert("successfully updated");
+       
     })
 }
  

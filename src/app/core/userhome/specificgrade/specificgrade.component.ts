@@ -27,8 +27,7 @@ export class SpecificgradeComponent implements OnInit {
    
     this.data=res;
     if(this.data!=undefined){
-      localStorage.setItem("user",JSON.stringify(res));
-      
+      localStorage.setItem("marks",JSON.stringify(res)); 
     }
     
    },(err)=>

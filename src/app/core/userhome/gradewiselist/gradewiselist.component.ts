@@ -22,8 +22,7 @@ export class GradewiselistComponent implements OnInit {
    
     this.data=res;
     if(this.data!=null){
-      localStorage.setItem("user",JSON.stringify(res));
-      
+      localStorage.setItem("marks",JSON.stringify(res));      
     }
     else
     {
