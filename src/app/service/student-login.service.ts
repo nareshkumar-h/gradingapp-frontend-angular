@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class StudentLoginService {
 
   constructor(private http:HttpClient) { }
-  apiUrl="https://gradingsystem.herokuapp.com/?";
+  apiUrl="https://gradingsystem.herokuapp.com/student/login?";
 
   login(formData:any):any{
-    return this.http.get(this.apiUrl+"email="+formData.email+"&studentid="+formData.studentid);
+    return this.http.get(this.apiUrl+"regno="+formData.studentid+"&email="+formData.email);
   }
 }

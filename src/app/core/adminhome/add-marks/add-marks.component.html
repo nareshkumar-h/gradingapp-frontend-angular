@@ -1,16 +1,17 @@
 
-
-<div class="row justify-content-center align-items-center" style="height: 20vh; margin: 0;">
-<div>
-    <h3>Update Student Marks</h3>
-    <br>
-        Enter the Register Number : <input type="number" [(ngModel)]="regno" id="regno" min="1000" max="1020" required autofocus /><br><br>
-        Enter the Mark for ENGLISH : <input type="number" [(ngModel)]="english" id="english" min="0" max="100" required><br><br>
-        Enter the Mark for MATHS : <input type="number" [(ngModel)]="maths" id="maths" min="0" max="100" required><br><br>
-        Enter the Mark for PHYSICS : <input type="number" [(ngModel)]= "physics"id="physics" min="0" max="100" required><br><br>
-        Enter the Mark for CHEMISTRY : <input type="number"[(ngModel)]="chemistry" id="chemistry" min="0" max="100" required><br><br>
-        Enter the Mark for COMPUTER : <input type="number" [(ngModel)]="computer"  id="computer" min="0" max="100" required><br><br>
-        <input type="submit" class="btn btn-primary" (click)="addmarks()" value="Submit" />
-        <input type="reset" class="btn btn-primary">
-</div>
-</div>
+<form class ="mx-auto formstyle" (submit)="addmarks()" ngNativeValidate>
+        <div class="row justify-content-center align-items-center" style="height: 20vh; margin: 0;">
+        <div>
+            <h3>Update Student Marks</h3>
+            <br>
+                Enter the Register Number : <input type="number" [(ngModel)]="regno" [ngModelOptions]="{standalone: true}" id="regno" min="1000" max="1020" required autofocus /><br><br>
+                Enter the Mark for ENGLISH : <input type="number" [(ngModel)]="english" [ngModelOptions]="{standalone: true}" id="english" min="0" max="100" required><br><br>
+                Enter the Mark for MATHS : <input type="number" [(ngModel)]="maths" [ngModelOptions]="{standalone: true}" id="maths" min="0" max="100" required><br><br>
+                Enter the Mark for PHYSICS : <input type="number" [(ngModel)]= "physics" [ngModelOptions]="{standalone: true}" id="physics" min="0" max="100" required><br><br>
+                Enter the Mark for CHEMISTRY : <input type="number"[(ngModel)]="chemistry" [ngModelOptions]="{standalone: true}" id="chemistry" min="0" max="100" required><br><br>
+                Enter the Mark for COMPUTER : <input type="number" [(ngModel)]="computer" [ngModelOptions]="{standalone: true}" id="computer" min="0" max="100" required><br><br>
+                <input type="submit" class="btn btn-primary" value="addmarks" />&nbsp;
+                <input type="reset" class="btn btn-primary">
+        </div>
+        </div>
+        </form>

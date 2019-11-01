@@ -18,6 +18,7 @@ import { AddMarksComponent } from './core/adminhome/add-marks/add-marks.componen
 import { AddFacultyComponent } from './core/adminhome/add-faculty/add-faculty.component';
 import { StudentLoginComponent } from './core/student-login/student-login.component';
 import { StudentfeatureComponent } from './core/studentfeature/studentfeature.component';
+import { AddStudentComponent } from './core/adminhome/add-student/add-student.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
 { path: 'addMarks', component: AddMarksComponent },
 { path: 'addEmployee', component: AddFacultyComponent },
 { path: 'studentLogin', component: StudentLoginComponent },
-{ path: 'studentfeature', component: StudentfeatureComponent }
+{ path: 'studentfeature', component: StudentfeatureComponent },
+{ path: 'addStudent', component: AddStudentComponent }
 
 ];
 

@@ -18,10 +18,22 @@ export class StudentLoginComponent implements OnInit {
   {
 
   let formData:any={
-    'email':this.studentid,
-    'password':this.email
+    'studentid':this.studentid,
+    'email':this.email
    };
    this.studentLogin.login(formData).subscribe((res)=>{
     console.log(JSON.stringify(res));
-   });}
+    let data=res;
+    if(data!=null)
+    {
+      localStorage.setItem("user",JSON.stringify(res));
+    this.router.navigate(['studentfeature']);
+    }
+    else
+    {
+      alert("Access denied! Invalid credentials");
+    }
+   },err=>{
+    console.log("Access denied! Invalid credentials" , err);
+    alert( "Access denied! Invalid credentials");});}
 }

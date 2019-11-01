@@ -1,0 +1,20 @@
+<div class="container">
+    <div id="messageBody" align=center></div>
+            <div class="form-group">
+               <br> <input type="text" class="form-control" autocomplete="off" [(ngModel)]="name" name="name"
+                    id="name" pattern="[A-Za-z]{1,20}$" title="Enter only alphabets and less than 20 letter" placeholder="student name" required="required" >
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" autocomplete="off" [(ngModel)]="email" name="email" id="email" placeholder="email" required="required" >
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" autocomplete="off" [(ngModel)]="regno" name="regno" id="regno" placeholder="regno" required="required" >
+            </div>
+
+            <div class="form-group" align=center>
+
+                <button type="submit" (click)="addEmployee()" class="btn btn-primary btn-xs">Add</button>&nbsp;
+                <button type="reset" class="btn btn-secondary btn-xs">clear</button>
+
+            </div>                    
+</div>

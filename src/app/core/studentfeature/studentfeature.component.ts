@@ -19,9 +19,9 @@ this.getResult();
   resData:[];
   getResult()
   {
-  //let regno=localStorage.getItem("studentID");
+  let user=JSON.parse(localStorage.getItem("user"));
   let formData:any={
-    'regno':1001,
+    'regno':user.regno,
    };
    this.studentfeatureservice.getResult(formData).subscribe((res)=>{
     console.log(JSON.stringify(res));

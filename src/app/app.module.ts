@@ -23,6 +23,7 @@ import { AddMarksComponent } from './core/adminhome/add-marks/add-marks.componen
 import { AddFacultyComponent } from './core/adminhome/add-faculty/add-faculty.component';
 import { StudentLoginComponent } from './core/student-login/student-login.component';
 import { StudentfeatureComponent } from './core/studentfeature/studentfeature.component';
+import { AddStudentComponent } from './core/adminhome/add-student/add-student.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { StudentfeatureComponent } from './core/studentfeature/studentfeature.co
     AddMarksComponent,
     AddFacultyComponent,
     StudentLoginComponent,
-    StudentfeatureComponent
+    StudentfeatureComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,
