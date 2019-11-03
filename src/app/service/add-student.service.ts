@@ -9,7 +9,7 @@ export class AddStudentService {
   constructor(private http:HttpClient) {} 
   apiUrl="https://gradingsystem.herokuapp.com/student/AddStudent?";
 
-  addfaculty(formData:any):any{
+  addStudent(formData:any):any{
     return this.http.post(this.apiUrl,formData);
   }
 }

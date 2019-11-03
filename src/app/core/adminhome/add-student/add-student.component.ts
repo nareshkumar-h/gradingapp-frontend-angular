@@ -10,7 +10,6 @@ import { AddStudentService } from 'src/app/service/add-student.service';
 export class AddStudentComponent implements OnInit {
   name:String;
   email:String;
-  regno:number;
 
   constructor(private addstudentService:AddStudentService) { }
 
@@ -21,13 +20,12 @@ export class AddStudentComponent implements OnInit {
     let formData:any={
       'email':this.email, 
       'name':this.name,
-      'regNo':this.regno
     };
-    this.addstudentService.addfaculty(formData).subscribe((res)=>{
+    this.addstudentService.addStudent(formData).subscribe((res)=>{
       console.log(JSON.stringify(res));
       var data=res;
       if(data =! null){
-        alert("Student Added Successfully")
+        alert("Student Added Successfully, ID:"+data.regno)
       }else{
         alert("error occured");
       }

@@ -26,7 +26,7 @@ this.getResult();
    this.studentfeatureservice.getResult(formData).subscribe((res)=>{
     console.log(JSON.stringify(res));
     this.subjects=res.subjectDTO;
-    this.marks=res.marks;
+    this.marks=res.markList;
     this.studentGrade=res.studentGrade;
     this.resData = res;
    })
