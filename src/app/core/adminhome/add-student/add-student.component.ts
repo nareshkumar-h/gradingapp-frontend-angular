@@ -25,7 +25,7 @@ export class AddStudentComponent implements OnInit {
       console.log(JSON.stringify(res));
       var data=res;
       if(data =! null){
-        alert("Student Added Successfully, ID:"+data.regno)
+        alert("Student Added Successfully, ID:"+res.regno)
       }else{
         alert("error occured");
       }
