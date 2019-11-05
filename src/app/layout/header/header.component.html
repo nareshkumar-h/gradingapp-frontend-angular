@@ -12,26 +12,28 @@
 			
 
 			<li class="nav-item active" *ngIf="!isLoggedIn()">
-				<a class="nav-link" routerLink="adminlogin">Admin Login</a>
+				<a class="nav-link" routerLink="adminlogin"><span class="ion-log-in">&nbsp;Admin Login</span></a>
 			</li>
 			<li class="nav-item active" *ngIf="!isLoggedIn()">
-				<a class="nav-link" routerLink="userlogin">User Login</a>
+				<a class="nav-link" routerLink="userlogin"><span class="ion-log-in">&nbsp;User Login</span></a>
 			</li>
 			<li class="nav-item active" *ngIf="!isLoggedIn()">
-					<a class="nav-link" routerLink="studentLogin">Student Login</a>
+					<a class="nav-link" routerLink="studentLogin"><span class="ion-log-in">&nbsp;Student Login</span></a>
 				</li>
 		</ul>
 		<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 				<li class="nav-item" *ngIf="isLoggedIn() && getRole()=='A'">
-						<a class="nav-link" routerLink="adminfeature">Home</a> 
+						<a class="nav-link" routerLink="adminfeature"><span class="ion-ios-home-outline"></span>&nbsp;Home</a> 
 					  </li>
 	
 					  <li class="nav-item" *ngIf="isLoggedIn() && getRole()=='T'">
-							<a class="nav-link" routerLink="userfeature">Home</a> 
+							<a class="nav-link" routerLink="userfeature"><span class="ion-ios-home-outline"></span>&nbsp;Home</a> 
 						  </li>
 		<li class="nav-item" *ngIf="isLoggedIn()">
-			<a class="nav-link" (click)="logout()">Log out</a> 
+			<a class="nav-link" (click)="logout()"><span class="ion-log-out">&nbsp;Log out</span></a> 
 		  </li>
+
+
 		</ul>
 	</div>
 </nav>

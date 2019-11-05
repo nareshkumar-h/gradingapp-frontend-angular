@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
     }
     else if(user.role=='T'){
     this.router.navigate(['userfeature']);}
+    else 
+    {
+      this.router.navigate(['studentfeature']);
+    }
   }
   else {
     this.router.navigate(['home']);

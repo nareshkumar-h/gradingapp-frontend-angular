@@ -20,6 +20,10 @@ export class AdminloginComponent implements OnInit {
         this.router.navigate(["adminfeature"]);
       }else if(user.role=='T'){
         this.router.navigate(['userfeature']);}
+        else
+        {
+          this.router.navigate(['studentfeature']);
+        }
       }
     }
   login()

@@ -19,6 +19,7 @@ import { AddFacultyComponent } from './core/adminhome/add-faculty/add-faculty.co
 import { StudentLoginComponent } from './core/student-login/student-login.component';
 import { StudentfeatureComponent } from './core/studentfeature/studentfeature.component';
 import { AddStudentComponent } from './core/adminhome/add-student/add-student.component';
+import { ForgotpasswordComponent } from './core/forgotpassword/forgotpassword.component';
 
 
 const routes: Routes = [
@@ -41,7 +42,8 @@ const routes: Routes = [
 { path: 'addEmployee', component: AddFacultyComponent },
 { path: 'studentLogin', component: StudentLoginComponent },
 { path: 'studentfeature', component: StudentfeatureComponent },
-{ path: 'addStudent', component: AddStudentComponent }
+{ path: 'addStudent', component: AddStudentComponent },
+{ path: 'forgotpassword', component: ForgotpasswordComponent }
 
 ];
 

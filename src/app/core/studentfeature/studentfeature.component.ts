@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { StudentfeatureService } from 'src/app/service/studentfeature.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-studentfeature',
   templateUrl: './studentfeature.component.html',
@@ -8,9 +9,25 @@ import { StudentfeatureService } from 'src/app/service/studentfeature.service';
 })
 export class StudentfeatureComponent implements OnInit {
 
-  constructor(private http:HttpClient,private studentfeatureservice:StudentfeatureService) { }
+  constructor(private http:HttpClient,private studentfeatureservice:StudentfeatureService,private router:Router) { }
 
   ngOnInit() {
+    let user=JSON.parse(localStorage.getItem("user"));
+    if(user!=null){
+      if(user.role=="A"){
+        this.router.navigate(["adminfeature"]);
+      }else if(user.role=='T'){
+        this.router.navigate(['userfeature']);}
+        else
+        {
+          this.router.navigate(['studentfeature']);
+        }
+      }
+      else
+      {
+        this.router.navigate(['home']);
+      }
+
 this.getResult();
   }
   subjects:any=[];

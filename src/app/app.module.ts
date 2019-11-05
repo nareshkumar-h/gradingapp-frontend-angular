@@ -24,7 +24,8 @@ import { AddFacultyComponent } from './core/adminhome/add-faculty/add-faculty.co
 import { StudentLoginComponent } from './core/student-login/student-login.component';
 import { StudentfeatureComponent } from './core/studentfeature/studentfeature.component';
 import { AddStudentComponent } from './core/adminhome/add-student/add-student.component';
-
+import { AvatarModule } from 'ngx-avatar';
+import { ForgotpasswordComponent } from './core/forgotpassword/forgotpassword.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,13 +47,15 @@ import { AddStudentComponent } from './core/adminhome/add-student/add-student.co
     AddFacultyComponent,
     StudentLoginComponent,
     StudentfeatureComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AvatarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

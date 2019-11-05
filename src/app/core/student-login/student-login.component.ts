@@ -13,6 +13,17 @@ export class StudentLoginComponent implements OnInit {
   constructor(private router:Router,private studentLogin:StudentLoginService) { }
 
   ngOnInit() {
+    let user=JSON.parse(localStorage.getItem("user"));
+    if(user!=null){
+      if(user.role=="A"){
+        this.router.navigate(["adminfeature"]);
+      }else if(user.role=='T'){
+        this.router.navigate(['userfeature']);}
+        else
+        {
+          this.router.navigate(['studentfeature']);
+        }
+      }
   }
   login()
   {
