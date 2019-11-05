@@ -17,7 +17,7 @@ export class ForgotpasswordComponent implements OnInit {
     var email=this.email;
     this.http.get("https://gms-faculty-ms.herokuapp.com/forgotpassword?email="+email).subscribe ( (res)=>{
       let data = res;
-      alert( data.errorMessage);
+      alert( "Mail has been sent");
   },err=>{
     alert( err.error.errorMessage);
   });
