@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import  $ from 'jquery';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { GuardsCheckStart } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-define-score-range',
   templateUrl: './define-score-range.component.html',
@@ -16,12 +18,12 @@ min1:number;
 min2:number;
 min3:number;
 min4:number;
-
+result: boolean=true;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-
+    let result: boolean=true;
     this.listGrades();
 /*  
     $('#min1').on('keyup',function(){
@@ -136,29 +138,7 @@ min4:number;
 
 
  $(function(){
-   /* function checkGrade()
-    {
-        let grade1 = parseInt($('#grade1').val());
-        let grade2 = parseInt($('#grade2').val());
-        let grade3 = parseInt($('#grade3').val());
-        let grade4 = parseInt($('#grade4').val());
-        let grade5 = parseInt($('#grade5').val());
-        let grade6 = parseInt($('#grade6').val());
-        let grade7 = parseInt($('#grade7').val());
-        let grade8 = parseInt($('#grade8').val());
-        let isStatus =  false;
-        if(grade1 < grade2 && grade1 > grade4 && grade3 < grade4 && grade3 > grade6 && grade5 < grade6 && grade5 > grade8)
-        {
-            isStatus = true;
-        }
-        return isStatus;
-    }
-    */
-
-
-  
-​
-   $('#min1').on('keyup',function(e){
+     $('#min1').on('keyup',function(e){
     var id = $(this).attr('id');
         setMarks(id);
         validateMarkRange(id);
@@ -197,93 +177,21 @@ min4:number;
 
    function validateMarkRange(id){
         let isStatus = checkGrade();
+        result=isStatus;
         console.log(id  + "-" + isStatus);
         if(isStatus)
         {
+           result=true;
             $('#' + id).css({'border':'2px solid gray'});
             
             console.log("true");
         } else{
+            result=false;
+            $("submit").prop("disabled", true);
             $('#' + id).css({'border':'2px solid red'});
         }
    }
-/*
-   $('#grade4').on('keyup',function(){
-        let grade4 = parseInt($('#grade4').val());
-        let grade1 = grade4 + 1;
-        $('#grade1').val(grade1);
-​
-        let isStatus = checkGrade();
-        if(isStatus)
-        {
-            $('#grade4').css({'border':'2px solid gray'});
-            console.log("true");
-        } else{
-            $('#grade4').css({'border':'2px solid red'});
-        }
-​
-   });
-   $('#grade3').on('keyup',function(){
-        let grade3 = parseInt($('#grade3').val());
-        let grade6 = grade3 - 1;
-        $('#grade6').val(grade6);
-​
-        let isStatus = checkGrade();
-        if(isStatus)
-        {
-            $('#grade3').css({'border':'2px solid gray'});
-            console.log("true");
-        } else{
-            $('#grade3').css({'border':'2px solid red'});
-        }
-​
-   });
-   $('#grade6').on('keyup',function(){
-        let grade6 = parseInt($('#grade6').val());
-        let grade3 = grade6 + 1;
-        $('#grade3').val(grade3);
-​
-        let isStatus = checkGrade();
-        if(isStatus)
-        {
-            $('#grade6').css({'border':'2px solid gray'});
-            console.log("true");
-        } else{
-            $('#grade6').css({'border':'2px solid red'});
-        }
-​
-   });
-   $('#grade5').on('keyup',function(){
-        let grade5 = parseInt($('#grade5').val());
-        let grade8 = grade5 - 1;
-        $('#grade8').val(grade8);
-​
-        let isStatus = checkGrade();
-        if(isStatus)
-        {
-            $('#grade5').css({'border':'2px solid gray'});
-            console.log("true");
-        } else{
-            $('#grade5').css({'border':'2px solid red'});
-        }
-​
-   });
-   $('#grade8').on('keyup',function(){
-        let grade8 = parseInt($('#grade8').val());
-        let grade5 = grade8 + 1;
-        $('#grade5').val(grade5);
-​
-        let isStatus = checkGrade();
-        if(isStatus)
-        {
-            $('#grade8').css({'border':'2px solid gray'});
-            console.log("true");
-        } else{
-            $('#grade8').css({'border':'2px solid red'});
-        }
-​
-   });
-   */
+
 })
 
   }
@@ -347,10 +255,12 @@ validateMarkRange(id){
     console.log(id  + "-" + isStatus);
     if(isStatus)
     {
+        $("submit").prop("disabled", false);
         $('#' + id).css({'border':'2px solid gray'});
         
         console.log("true");
     } else{
+        $("submit").prop("disabled", true);
         $('#' + id).css({'border':'2px solid red'});
     }
 }
@@ -372,6 +282,15 @@ checkGrade()
     return isStatus;
 }
 
-
+getStatus()
+{
+    this.result=this.checkGrade()
+  if( this.result){
+  this.updateRanges();
+    }  else
+  {
+      alert("Invalid score range");
+  }
+}
 
 }
